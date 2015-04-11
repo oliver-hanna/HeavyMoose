@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+  <title>Heavy Moose</title>
+</head>
+
+<form action="" method="POST">
+  <br>
+{% if origin %}
+  <input type="text" name="origin" value="{{ origin }}">
+{% else %}
+  <input type="text" name="origin">
+{% endif %}
+  <br>
+  <input type="submit" value="Submit">
+</form>
+<div>
+{% if result %}
+  <input type="text" name="result" value="{{ result }}">
+{% else %}
+  <input type="text" name="result" value="{{ result }}">
+{% end %}
+</div>
