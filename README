@@ -1,4 +1,4 @@
-Essay Helper
+#Heavy Moose
 
 The app will recieve inputted text, parse it to a list of each individual strings.
 Next, iterate through the list and check:
