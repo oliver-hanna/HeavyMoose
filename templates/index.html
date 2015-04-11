@@ -1,22 +1,40 @@
 <!DOCTYPE html>
+
 <head>
   <title>Heavy Moose</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.18.0/css/uikit.min.css">
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.18.0/js/uikit.min.js"></script>
 </head>
 
-<form action="" method="POST">
-  <br>
-{% if origin %}
-  <input type="text" name="origin" value="{{ origin }}">
-{% else %}
-  <input type="text" name="origin">
-{% endif %}
-  <br>
-  <input type="submit" value="Submit">
-</form>
-<div>
-{% if result %}
-  <input type="text" name="result" value="{{ result }}">
-{% else %}
-  <input type="text" name="result" value="{{ result }}">
-{% endif %}
-</div>
+<body class="uk-height-1-1">
+
+  <div class="uk-vertical-align uk-text-center uk-height-1-1">
+    <div class="uk-vertical-align-middle" style="width: 500px;">
+
+      <form class="uk-panel uk-panel-box uk-form" action="" method="POST">
+        <div class="uk-form-row">
+          {% if origin %}
+          <textarea class="uk-width-1-1 uk-form-large" type="text" name="origin">{{ origin }}</textarea>
+          {% else %}
+          <textarea class="uk-width-1-1 uk-form-large" type="text" name="origin"></textarea>
+          {% endif %}
+        </div>
+        <div class="uk-form-row">
+          {% if result %}
+          <textarea class="uk-width-1-1 uk-form-large" type="text" name="result">{{ result }}</textarea>
+          {% else %}
+          <textarea class="uk-width-1-1 uk-form-large" type="text" name="result"></textarea>
+          {% endif %}
+        </div>
+        <div class="uk-form-row">
+          <button class="uk-width-1-1 uk-button uk-button-primary uk-button-large">Convert</a>
+        </div>
+
+      </form>
+
+
+    </div>
+  </div>
+
+</body>
