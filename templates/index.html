@@ -3,38 +3,47 @@
 <head>
   <title>Heavy Moose</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.18.0/css/uikit.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.18.0/js/uikit.min.js"></script>
+  <style>
+    .uk-h1 { font-family: 'Raleway', sans-serif; font-size: 60px; line-height: 75px;}
+    textarea { font-family: 'Raleway', sans-serif;}
+  </style>
 </head>
 
 <body class="uk-height-1-1">
 
   <div class="uk-vertical-align uk-text-center uk-height-1-1">
-    <div class="uk-vertical-align-middle" style="width: 500px;">
+    <div class="uk-grid uk-vertical-align-middle" style="width: 800px;">
+      <div class="uk-width-medium-2-10">
+        <img class="responsive-width" src="http://imgur.com/m2aDFme.jpg" alt="">
+      </div>
+      <div class="uk-width-medium-8-10">
+        <h1 class="uk-h1 uk-align-left">HEAVY MOOSE</h1>
+      </div>
+    </div>
 
+    <div class="uk-vertical-align-middle" style="width: 800px;">
       <form class="uk-panel uk-panel-box uk-form" action="" method="POST">
         <div class="uk-form-row">
           {% if origin %}
-          <textarea class="uk-width-1-1 uk-form-large" type="text" name="origin">{{ origin }}</textarea>
+          <textarea rows="10" class="uk-width-1-1 uk-form-large" name="origin">{{ origin }}</textarea>
           {% else %}
-          <textarea class="uk-width-1-1 uk-form-large" type="text" name="origin"></textarea>
+          <textarea rows="10" class="uk-width-1-1 uk-form-large" name="origin"></textarea>
           {% endif %}
         </div>
         <div class="uk-form-row">
           {% if result %}
-          <textarea class="uk-width-1-1 uk-form-large" type="text" name="result">{{ result }}</textarea>
+          <textarea rows="10" class="uk-width-1-1 uk-form-large" name="result">{{ result }}</textarea>
           {% else %}
-          <textarea class="uk-width-1-1 uk-form-large" type="text" name="result"></textarea>
+          <textarea rows="10" class="uk-width-1-1 uk-form-large" name="result"></textarea>
           {% endif %}
         </div>
-        <div class="uk-form-row">
-          <button class="uk-width-1-1 uk-button uk-button-primary uk-button-large">Convert</a>
+       <div class="uk-form-row">
+          <button class="uk-width-1-1 uk-button uk-button-primary uk-button-large">Convert</button>
         </div>
-
-      </form>
-
 
     </div>
   </div>
-
 </body>
