@@ -18,11 +18,8 @@ def convert():
             else:
                 final_string += thesWord + " "
             cl = len(thesWord)-1
-            if
-            (
-                    thesWord[cl] == '!' or thesWord[cl] == '.' or
-                    thesWord[cl] == '?'
-            ):
+            if(thesWord[cl] == '!' or thesWord[cl] == '.' or
+               thesWord[cl] == '?'):
                 capnext = true
         return render_template('index.html', origin=origin, result=final_string)
     else:
