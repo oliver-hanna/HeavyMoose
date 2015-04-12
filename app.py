@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from converter import thes_search, in_query
-import time
 
 app = Flask(__name__)
 
@@ -12,7 +11,6 @@ def convert():
         words_list = origin.split()
         for word in words_list:
             final_string += thes_search(word) + " "
-            time.sleep(0.1)
         return render_template('index.html', origin=origin, result=final_string)
     else:
         return render_template('index.html')
