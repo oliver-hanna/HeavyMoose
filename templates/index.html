@@ -28,16 +28,16 @@
       <form class="uk-panel uk-panel-box uk-form" action="" method="POST">
         <div class="uk-form-row">
           {% if origin %}
-          <textarea rows="10" class="uk-width-1-1 uk-form-large" name="origin">{{ origin }}</textarea>
+          <textarea rows="8" class="uk-width-1-1 uk-form-large" placeholder="Enter text" name="origin">{{ origin }}</textarea>
           {% else %}
-          <textarea rows="10" class="uk-width-1-1 uk-form-large" name="origin"></textarea>
+          <textarea rows="8" class="uk-width-1-1 uk-form-large" placeholder="Enter text" name="origin"></textarea>
           {% endif %}
         </div>
         <div class="uk-form-row">
           {% if result %}
-          <textarea rows="10" class="uk-width-1-1 uk-form-large" name="result">{{ result }}</textarea>
+          <textarea rows="8" class="uk-width-1-1 uk-form-large" placeholder="Output" name="result">{{ result }}</textarea>
           {% else %}
-          <textarea rows="10" class="uk-width-1-1 uk-form-large" name="result"></textarea>
+          <textarea rows="8" class="uk-width-1-1 uk-form-large" placeholder="Output" name="result"></textarea>
           {% endif %}
         </div>
        <div class="uk-form-row">
