@@ -101,7 +101,7 @@ def thes_search(query):
     try:
         json_obj=urllib2.urlopen(final_url)
     except urllib2.HTTPError:
-        return original
+        return original+'%'
     data= json.load(json_obj)
 
     ##ADDS ALL SYNONYMS IN REL, SIM, AND SYN TO SYN_LIST LIST
@@ -112,12 +112,12 @@ def thes_search(query):
             if type=='syn':
                 for item in data['adjective']['syn']:
                     syn_list.append(item)
-                    if type=='rel':
-                        for item in data['adjective']['rel']:
-                            syn_list.append(item)
-                    if type=='sim':
-                        for item in data['adjective']['sim']:
-                            syn_list.append(item)
+            if type=='rel':
+                for item in data['adjective']['rel']:
+                    syn_list.append(item)
+            if type=='sim':
+                for item in data['adjective']['sim']:
+                    syn_list.append(item)
     else:
         return original
     #PASSES SYN_LIST INTO IN_QUERY WHICH CHOOSES SYNONYM			
@@ -137,12 +137,12 @@ def in_query(query, syn_list):
     word_count=0
     val_dic= {}
     length=len(syn_list)
-    max_key=' '
+    max_key=' **unchanged** '
     max_val=0
 
 #makes a random list of appropraite size based on amount of synonyms returned by thesaurus API
     if length>=40:
-        while word_count<10:
+        while word_count<11:
             rand=randint(0,length-1)
             if (syns.count(syn_list[rand]) == 1)==False:
                 syns.append(syn_list[rand])
