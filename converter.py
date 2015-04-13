@@ -86,8 +86,17 @@ def thes_search(query):
        query[len(query)-1] == '?'):
         query=query[:-1]
         punct = True
+    elif(query[len(query)-1] == ',' or query[len(query)-1] == ';' or
+       query[len(query)-1] == ':'):
+        query=query[:-1]
+        punct = True
     capBool = query[0].isupper()
     query = query.lower()
+
+    plural = False
+  #  if query[:2] == 'ly':
+   #     plural = True
+    #    query = query[:-2]
 
     if fwordlist.count(query) == 1:
         return original
@@ -124,6 +133,8 @@ def thes_search(query):
     final_word=in_query(word, syn_list)
     syn_list=[]
     ##PRINTS FINAL WORD RETURNED FROM IN_QUERY
+    if(plural == True):
+        final_word+='ly'
     if(punct == True):
         final_word+=original[len(original)-1]
     if(capBool == True):
